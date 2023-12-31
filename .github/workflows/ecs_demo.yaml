@@ -43,6 +43,7 @@ jobs:
         aws-region: us-east-1
 
 
+
    - name: Login to Amazon ECR
      #id: login-ecr
      id: ecr-id
