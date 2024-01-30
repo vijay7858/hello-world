@@ -12,7 +12,7 @@ jobs:
       - name: Build and test
         run: dotnet build --configuration Release
       - name: SonarCloud Analysis
-        uses: .github/CODEOWNERS @sonarsource/sonarcloud
+        uses: SonarSource/sonarcloud-github-action@v1.8
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
