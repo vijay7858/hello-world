@@ -20,5 +20,5 @@ jobs:
             -Dsonar.organization=vijay7858
             -Dsonar.projectKey=hello-world
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
