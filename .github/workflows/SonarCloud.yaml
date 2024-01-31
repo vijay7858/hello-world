@@ -17,6 +17,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+run: |           
+dotnet tool install --global dotnet-coverage           
+
+.\.sonar\scanner\dotnet-sonarscanner begin /k:"vijay7858_hello-world" /o:"vijay7858" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml           
+dotnet build --configuration Release          
+dotnet-coverage collect 'dotnet test' -f xml -o 'coverage.xml'          
+.\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
+          
+
         with:
           args: >
             -Dsonar.organization=vijay7858
