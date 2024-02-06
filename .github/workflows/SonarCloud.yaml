@@ -21,12 +21,3 @@ jobs:
             -Dsonar.organization=vijay7858
             -Dsonar.projectKey=vijay7858_hello-world
 
-            shell: powershell
-        run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"vijay7858_hello-world" /o:"vijay7858" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" 
-          /d:sonar.host.url="https://sonarcloud.io"
-          echo building project
-          dotnet build src/
-          echo trying to run tests
-dotnet test test/unit-tests.csproj
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
