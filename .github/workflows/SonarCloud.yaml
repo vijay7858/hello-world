@@ -21,3 +21,7 @@ jobs:
             -Dsonar.organization=vijay7858
             -Dsonar.projectKey=vijay7858_hello-world
 
+
+run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
