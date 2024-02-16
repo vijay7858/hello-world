@@ -20,4 +20,3 @@ jobs:
           args: >
             -Dsonar.organization=vijay7858
             -Dsonar.projectKey=vijay7858_hello-world
-
