@@ -11,6 +11,7 @@ jobs:
           dotnet-version: 8.0.x
       - name: Build and test
         run: |
+          dotnet tool install --global dotnet-sonarscanner
           dotnet tool install --global dotnet-coverage
           dotnet sonarscanner begin /k:"vijay7858_hello-world" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
           dotnet build --configuration Release
